@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PeliYa - Tu Catálogo de Películas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado y barra de navegación -->
+  <header class="navbar">
+    <div class="logo">Peli<span>YA</span></div>
+    <div class="stats-bar">
+      <span>Disponibles: <strong id="stat-total">0</strong></span>
+      <span>Favoritas: <strong id="stat-favs">0</strong></span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Formulario para Agregar Películas -->
+    <section class="controls-card">
+      <h3 class="form-title">➕ Agregar Nueva Película</h3>
+      <form id="form-add-movie" class="add-movie-form">
+        <input type="text" id="add-title" placeholder="Título de la película" required style="flex: 2; min-width: 200px;">
+        <input type="text" id="add-director" placeholder="Director" required style="flex: 1; min-width: 150px;">
+        <input type="number" id="add-year" placeholder="Año" min="1900" max="2030" required style="flex: 1; min-width: 100px;">
+        <input type="number" id="add-rating" placeholder="Calificación (1-10)" min="1" max="10" step="0.1" required style="flex: 1; min-width: 100px;">
+        
+        <select id="add-genre" style="flex: 1; min-width: 140px;">
+          <option value="Acción">Acción</option>
+          <option value="Ciencia Ficción">Ciencia Ficción</option>
+          <option value="Drama">Drama</option>
+          <option value="Animación">Animación</option>
+          <option value="Terror">Terror</option>
+          <option value="Aventura">Aventura</option>
+          <option value="Comedia">Comedia</option>
+        </select>
+
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+
+    <!-- Panel de Controles: Búsqueda y Filtros -->
+    <section class="controls-card">
+      <div class="search-box">
+        <input type="text" id="input-search" placeholder="Buscar película por título o director...">
+      </div>
+
+      <div class="filter-box">
+        <select id="select-genre">
+          <option value="Todos">Todos los géneros</option>
+          <option value="Acción">Acción</option>
+          <option value="Ciencia Ficción">Ciencia Ficción</option>
+          <option value="Drama">Drama</option>
+          <option value="Animación">Animación</option>
+          <option value="Terror">Terror</option>
+          <option value="Aventura">Aventura</option>
+          <option value="Comedia">Comedia</option>
+        </select>
+
+        <select id="select-filter-type">
+          <option value="todas">Mostrar todas</option>
+          <option value="favoritas">Solo Mis Favoritas ⭐</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Catálogo de Películas -->
+    <section>
+      <h2 id="section-title">Catálogo Completo</h2>
+      <div id="movies-grid" class="movies-grid"></div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
